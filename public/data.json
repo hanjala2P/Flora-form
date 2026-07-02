@@ -1,0 +1,74 @@
+[
+  {
+    "plantId": 1,
+    "plantName": "Snake Plant",
+    "category": "Air Purifier",
+    "price": 18,
+    "rating": 4.8,
+    "availableStock": 10,
+    "careLevel": "Easy",
+    "description": "A hardy plant that purifies indoor air and thrives in low light.",
+    "image": "https://postimg.cc",
+    "providerName": "UrbanGreen Studio"
+  },
+  {
+    "plantId": 2,
+    "plantName": "Monstera Deliciosa",
+    "category": "Foliage",
+    "price": 35,
+    "rating": 4.9,
+    "availableStock": 7,
+    "careLevel": "Medium",
+    "description": "Famous for its dramatic, perforated leaves that bring a tropical vibe home.",
+    "image": "https://postimg.cc",
+    "providerName": "Greenery Hub"
+  },
+  {
+    "plantId": 3,
+    "plantName": "ZZ Plant",
+    "category": "Low Light",
+    "price": 22,
+    "rating": 4.7,
+    "availableStock": 15,
+    "careLevel": "Easy",
+    "description": "Features shiny, waxy leaves and survives beautifully on extreme neglect.",
+    "image": "https://postimg.cc",
+    "providerName": "LeafyLife Botanicals"
+  },
+  {
+    "plantId": 4,
+    "plantName": "Peace Lily",
+    "category": "Flowering",
+    "price": 25,
+    "rating": 4.6,
+    "availableStock": 8,
+    "careLevel": "Medium",
+    "description": "Elegant white blooms that filter toxic gases out of your living space.",
+    "image": "https://postimg.cc",
+    "providerName": "UrbanGreen Studio"
+  },
+  {
+    "plantId": 5,
+    "plantName": "Fiddle Leaf Fig",
+    "category": "Foliage",
+    "price": 45,
+    "rating": 4.4,
+    "availableStock": 4,
+    "careLevel": "Hard",
+    "description": "Stunning violin-shaped leaves that demand consistent light and careful watering.",
+    "image": "https://postimg.cc",
+    "providerName": "The Plant Corner"
+  },
+  {
+    "plantId": 6,
+    "plantName": "Aloe Vera",
+    "category": "Succulent",
+    "price": 14,
+    "rating": 4.8,
+    "availableStock": 20,
+    "careLevel": "Easy",
+    "description": "A soothing succulent packed with medicinal gel that loves sunny windowsills.",
+    "image": "https://postimg.cc",
+    "providerName": "Greenery Hub"
+  }
+]
