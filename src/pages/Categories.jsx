@@ -1,36 +1,64 @@
 import React from 'react';
-
+import { FiShoppingCart } from "react-icons/fi"; 
 import { PiLeafBold, PiSunBold, PiDropBold, PiFlowerBold } from 'react-icons/pi';
-import { useRouteLoaderData } from 'react-router';
+import { useLoaderData } from 'react-router';
+
 
 const Categories = () => {
 
-  const data = useRouteLoaderData(); 
+  const data = useLoaderData();
   console.log(data); 
 
+
   return (
+
     <section className="py-20 bg-lime-50/50">
       <div className="container mx-auto px-6">
         <div className="text-center mb-16">
-          <h2 className="text-4xl font-bold text-gray-800 mb-4">Explore Categories</h2>
+          <h2 className="text-4xl font-bold text-gray-800 mb-4">Top Rated Indoor Plants</h2>
           <p className="text-gray-500">Find the perfect plant for your unique space</p>
         </div>
+        <p>total data {data?.length}</p>
 
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
-          {data?.map((cat, index) => (
-            <div 
-              key={cat.id || index} //
-              className="group bg-white p-8 rounded-3xl border border-lime-100 shadow-sm hover:shadow-xl hover:border-lime-300 transition-all duration-300 cursor-pointer flex flex-col items-center text-center"
-            >
-          
-              <div className="text-4xl text-lime-500 mb-6 group-hover:scale-110 transition-transform duration-300">
-                <PiLeafBold /> 
-              </div>
-              <h3 className="font-bold text-gray-800 mb-1">{cat.categoryName}</h3>
-              <p className="text-sm text-gray-400">{cat.totalItems} Items</p>
-            </div>
-          ))}
+<div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+  {data?.map((cat, index) => (
+    <div 
+      key={cat.plantId || index} 
+      className="group bg-white p-5 rounded-xl border border-gray-100 shadow-[0_4px_20px_rgba(0,0,0,0.05)] hover:shadow-[0_10px_30px_rgba(163,230,53,0.15)] transition-all duration-500 flex flex-col"
+    >
+    
+      <div className="relative w-full h-64 mb-5 overflow-hidden rounded-lg">
+        <img 
+          src={cat.image} 
+          alt={cat.plantName} 
+          className="w-full  h-full object-cover group-hover:scale-105 transition-transform duration-700"
+        />
+        <div className="absolute top-4 left-4 bg-white/90 px-3 py-1 rounded-full text-xs font-bold text-gray-800 shadow-sm flex items-center gap-1">
+          <span className="text-yellow-400">★</span> {cat.rating}
         </div>
+      </div>
+
+     
+      <div className="flex-grow mb-4">
+        <h3 className="font-bold text-gray-900 text-lg">{cat.plantName}</h3>
+        <p className="text-sm text-gray-500 mb-2">{cat.category}</p>
+        
+      
+        <div className="flex justify-between items-center mt-2">
+          <p className="font-bold text-lime-600 text-2xl">${cat.price}</p>
+          <button className="bg-lime-500 hover:bg-lime-600 text-white p-3 rounded-full transition-all active:scale-90 shadow-md">
+            <FiShoppingCart size={20} />
+          </button>
+        </div>
+      </div>
+
+     
+      <button className="w-full text-black bg-lime-100 hover:bg-lime-400 hover:text-white font-medium py-3 rounded-xl transition-all active:scale-95">
+        View Details
+      </button>
+    </div>
+  ))}
+</div>
       </div>
     </section>
   );

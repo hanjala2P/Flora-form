@@ -4,6 +4,8 @@ import Login from "../pages/Login";
 import Register from "../pages/Register";
 import Categories from "../pages/Categories";
 import Home from "../Components/Home";
+import Test from "../pages/Test";
+
 
 const router = createBrowserRouter([
     {
@@ -13,13 +15,11 @@ const router = createBrowserRouter([
             {
                 index: true,
                 element: <Home/>,
+                loader: () => fetch('/data.json')
 
             },
-            {
-                Component: Categories,
-                loader: () => fetch('/data.json')
-                
-            },
+          // In your router configuration
+
             {
                 path:'/login',
                 Component:Login

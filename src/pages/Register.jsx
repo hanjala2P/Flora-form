@@ -3,6 +3,7 @@ import { FcGoogle } from 'react-icons/fc';
 import { Link } from 'react-router'; 
 
 const Register = () => {
+    
   return (
     <div className="min-h-screen flex items-center justify-center bg-lime-50 px-4 py-10">
       <div className="bg-white p-8 md:p-12 rounded-3xl shadow-xl w-full max-w-md border border-lime-100">

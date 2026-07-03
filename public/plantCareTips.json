@@ -1,0 +1,47 @@
+[
+  {
+    "id": 1,
+    "plantCategory": "Air Purifier",
+    "careTips": {
+      "watering": "Water once a week. It is best to water when the top 2 inches of soil feel dry.",
+      "sunlight": "Thrives in bright, indirect light. Direct sunlight can scorch the leaves.",
+      "fertilizing": "Apply a liquid fertilizer once a month during spring and summer."
+    }
+  },
+  {
+    "id": 2,
+    "plantCategory": "Foliage",
+    "careTips": {
+      "watering": "Keep the topsoil lightly moist. Avoid letting water sit at the bottom of the pot.",
+      "sunlight": "Prefers bright to medium indirect light. Growth slows down in low-light conditions.",
+      "fertilizing": "Feed with a balanced indoor plant fertilizer every 6-8 weeks."
+    }
+  },
+  {
+    "id": 3,
+    "plantCategory": "Low Light",
+    "careTips": {
+      "watering": "Needs very little water. Water only when the soil has dried out completely.",
+      "sunlight": "Can survive in low light, but thrives and grows faster in bright, indirect light.",
+      "fertilizing": "Fertilizing twice a year (during spring and autumn) is sufficient."
+    }
+  },
+  {
+    "id": 4,
+    "plantCategory": "Flowering",
+    "careTips": {
+      "watering": "Keep the soil consistently moist. If leaves start drooping, it needs water.",
+      "sunlight": "Needs bright, indirect light. Direct sun can cause flowers to wilt quickly.",
+      "fertilizing": "Use a bloom-booster fertilizer once a month during the flowering season."
+    }
+  },
+  {
+    "id": 5,
+    "plantCategory": "Succulent",
+    "careTips": {
+      "watering": "Water deeply only when the soil is completely dry. Avoid getting water on the leaves.",
+      "sunlight": "Requires at least 6 hours of bright sunlight or intense indirect light daily.",
+      "fertilizing": "Use a specialized cactus or succulent fertilizer once a month during summer."
+    }
+  }
+]

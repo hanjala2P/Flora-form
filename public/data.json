@@ -8,7 +8,7 @@
     "availableStock": 10,
     "careLevel": "Easy",
     "description": "A hardy plant that purifies indoor air and thrives in low light.",
-    "image": "https://postimg.cc",
+    "image": "https://images.pexels.com/photos/29218657/pexels-photo-29218657.jpeg",
     "providerName": "UrbanGreen Studio"
   },
   {
@@ -20,7 +20,7 @@
     "availableStock": 7,
     "careLevel": "Medium",
     "description": "Famous for its dramatic, perforated leaves that bring a tropical vibe home.",
-    "image": "https://postimg.cc",
+    "image": "https://images.pexels.com/photos/7318283/pexels-photo-7318283.jpeg",
     "providerName": "Greenery Hub"
   },
   {
@@ -32,7 +32,7 @@
     "availableStock": 15,
     "careLevel": "Easy",
     "description": "Features shiny, waxy leaves and survives beautifully on extreme neglect.",
-    "image": "https://postimg.cc",
+    "image": "https://images.pexels.com/photos/8298251/pexels-photo-8298251.jpeg",
     "providerName": "LeafyLife Botanicals"
   },
   {
@@ -44,7 +44,7 @@
     "availableStock": 8,
     "careLevel": "Medium",
     "description": "Elegant white blooms that filter toxic gases out of your living space.",
-    "image": "https://postimg.cc",
+    "image": "https://images.pexels.com/photos/32425124/pexels-photo-32425124.jpeg",
     "providerName": "UrbanGreen Studio"
   },
   {
@@ -56,7 +56,7 @@
     "availableStock": 4,
     "careLevel": "Hard",
     "description": "Stunning violin-shaped leaves that demand consistent light and careful watering.",
-    "image": "https://postimg.cc",
+    "image": "https://images.unsplash.com/photo-1545241047-6083a3684587?auto=format&fit=crop&q=80&w=500",
     "providerName": "The Plant Corner"
   },
   {
@@ -68,7 +68,7 @@
     "availableStock": 20,
     "careLevel": "Easy",
     "description": "A soothing succulent packed with medicinal gel that loves sunny windowsills.",
-    "image": "https://postimg.cc",
+    "image": "https://images.pexels.com/photos/17543272/pexels-photo-17543272.jpeg",
     "providerName": "Greenery Hub"
   }
 ]
