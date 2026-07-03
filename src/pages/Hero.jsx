@@ -7,7 +7,7 @@ import 'swiper/css/pagination';
 import 'swiper/css/effect-fade';
 
 const Hero = () => {
-  // Premium Plant Images
+
   const slides = [
     {
       img: "https://images.unsplash.com/photo-1497215728101-856f4ea42174?q=80&w=2070&auto=format&fit=crop",
@@ -43,10 +43,10 @@ const Hero = () => {
               className="w-full h-full bg-cover bg-center flex items-center justify-center relative"
               style={{ backgroundImage: `url(${slide.img})` }}
             >
-              {/* Dark overlay for text readability */}
+           
               <div className="absolute inset-0 bg-black/40"></div>
 
-              {/* Centered Modern Content */}
+             
               <div className="relative z-10 text-center text-white px-4 max-w-3xl">
                 <h1 className="text-5xl md:text-7xl font-extrabold mb-6 tracking-tight drop-shadow-lg">
                   {slide.title}
@@ -63,7 +63,7 @@ const Hero = () => {
         ))}
       </Swiper>
 
-      {/* Custom Navigation Styling */}
+     
       <style>{`
         .swiper-button-next, .swiper-button-prev { color: white !important; }
         .swiper-pagination-bullet { background: white !important; opacity: 0.5; }

@@ -1,24 +1,105 @@
-const swiper = new Swiper('.swiper', {
-  slidesOffsetBefore: 2,
-  speed: 600,
-  loop: true,
-  loopPreventsSliding: false,
-  parallax: true,
-  effect: "fade",
-  fadeEffect: {
-    crossFade: true
+// const swiper = new Swiper('.swiper', {
+//   slidesOffsetBefore: 2,
+//   speed: 600,
+//   loop: true,
+//   loopPreventsSliding: false,
+//   parallax: true,
+//   effect: "fade",
+//   fadeEffect: {
+//     crossFade: true
+//   },
+//   navigation: {
+//     nextEl: ".swiper-button-next",
+//     prevEl: ".swiper-button-prev"
+//   },
+//   pagination: {
+//     el: ".swiper-pagination",
+//     dynamicBullets: true,
+//     hideOnClick: true
+//   },
+//   autoplay: {
+//     pauseOnMouseEnter: true
+//   },
+//   keyboard: true
+// });
+
+[
+  {
+    "plantId": 1,
+    "plantName": "Snake Plant",
+    "category": "Air Purifier",
+    "price": 18,
+    "rating": 4.8,
+     "image": "https://images.pexels.com/photos/29218657/pexels-photo-29218657.jpeg",
+    "tips": {
+      "watering": "Water once a week. It is best to water when the top 2 inches of soil feel dry.",
+      "sunlight": "Thrives in bright, indirect light. Direct sunlight can scorch the leaves.",
+      "fertilizing": "Apply a liquid fertilizer once a month during spring and summer."
+    }
   },
-  navigation: {
-    nextEl: ".swiper-button-next",
-    prevEl: ".swiper-button-prev"
+  {
+    "plantId": 2,
+    "plantName": "Monstera Deliciosa",
+    "category": "Foliage",
+    "price": 35,
+    "rating": 4.9,
+        "image": "https://images.pexels.com/photos/7318283/pexels-photo-7318283.jpeg",
+    "tips": {
+      "watering": "Keep the topsoil lightly moist. Avoid letting water sit at the bottom of the pot.",
+      "sunlight": "Prefers bright to medium indirect light.",
+      "fertilizing": "Feed with a balanced indoor plant fertilizer every 6-8 weeks."
+    }
   },
-  pagination: {
-    el: ".swiper-pagination",
-    dynamicBullets: true,
-    hideOnClick: true
+  {
+    "plantId": 3,
+    "plantName": "ZZ Plant",
+    "category": "Low Light",
+    "price": 22,
+    "rating": 4.7,
+       "image": "https://images.pexels.com/photos/8298251/pexels-photo-8298251.jpeg",
+    "tips": {
+      "watering": "Needs very little water. Water only when the soil has dried out completely.",
+      "sunlight": "Can survive in low light, but thrives in bright, indirect light.",
+      "fertilizing": "Fertilizing twice a year (during spring and autumn) is sufficient."
+    }
   },
-  autoplay: {
-    pauseOnMouseEnter: true
+  {
+    "plantId": 4,
+    "plantName": "Peace Lily",
+    "category": "Flowering",
+    "price": 25,
+    "rating": 4.6,
+    "image": "https://images.pexels.com/photos/32425124/pexels-photo-32425124.jpeg",
+    "tips": {
+      "watering": "Keep the soil consistently moist. If leaves start drooping, it needs water.",
+      "sunlight": "Needs bright, indirect light.",
+      "fertilizing": "Use a bloom-booster fertilizer once a month during the flowering season."
+    }
   },
-  keyboard: true
-});
+  {
+    "plantId": 5,
+    "plantName": "Fiddle Leaf Fig",
+    "category": "Foliage",
+    "price": 45,
+    "rating": 4.4,
+   "image": "https://images.unsplash.com/photo-1545241047-6083a3684587?auto=format&fit=crop&q=80&w=500",
+    "tips": {
+      "watering": "Allow the top inch of soil to dry out between waterings.",
+      "sunlight": "Bright, indirect light is best.",
+      "fertilizing": "Fertilize during the growing season once a month."
+    }
+  },
+  {
+    "plantId": 6,
+    "plantName": "Aloe Vera",
+    "category": "Succulent",
+    "price": 14,
+    "rating": 4.8,
+       "image": "https://images.pexels.com/photos/17543272/pexels-photo-17543272.jpeg",
+    "tips": {
+      "watering": "Water deeply only when the soil is completely dry.",
+      "sunlight": "Requires at least 6 hours of bright sunlight daily.",
+      "fertilizing": "Use a specialized succulent fertilizer once a month during summer."
+    }
+  }
+]

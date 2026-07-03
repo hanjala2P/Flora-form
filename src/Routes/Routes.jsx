@@ -5,6 +5,8 @@ import Register from "../pages/Register";
 import Categories from "../pages/Categories";
 import Home from "../Components/Home";
 import Test from "../pages/Test";
+import Tips from "../pages/Tips";
+import ViewDetails from "../pages/ViewDetails";
 
 
 const router = createBrowserRouter([
@@ -18,7 +20,12 @@ const router = createBrowserRouter([
                 loader: () => fetch('/data.json')
 
             },
-          // In your router configuration
+            {
+                loader: () => fetch('/plantCareTips.json'),
+                Component: Tips,
+
+            },
+        
 
             {
                 path:'/login',
@@ -28,6 +35,11 @@ const router = createBrowserRouter([
                 path:'/register',
                 Component:Register
 
+            },
+            {
+                path:'/viewDetails',
+                Component:ViewDetails,
+                loader:()=> fetch('/data.json/:id')
             }
         ]
     }

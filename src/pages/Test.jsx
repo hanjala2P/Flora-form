@@ -3,7 +3,7 @@ import { useLoaderData } from 'react-router';
 
 const Test = () => {
     const data = useLoaderData();
-    console.log(data); // Log the fetched data to the console
+    console.log("test", data); // Log the fetched data to the console
     return (
         <div>
             <h1>Test Page</h1>

@@ -1,7 +1,7 @@
 import React from 'react';
 import { FiShoppingCart } from "react-icons/fi"; 
 import { PiLeafBold, PiSunBold, PiDropBold, PiFlowerBold } from 'react-icons/pi';
-import { useLoaderData } from 'react-router';
+import { Link, useLoaderData } from 'react-router';
 
 
 const Categories = () => {
@@ -10,15 +10,17 @@ const Categories = () => {
   console.log(data); 
 
 
+
   return (
 
     <section className="py-20 bg-lime-50/50">
       <div className="container mx-auto px-6">
         <div className="text-center mb-16">
           <h2 className="text-4xl font-bold text-gray-800 mb-4">Top Rated Indoor Plants</h2>
+          <div className="w-20 h-1.5 bg-lime-500 mx-auto rounded-full mb-6"></div>
           <p className="text-gray-500">Find the perfect plant for your unique space</p>
         </div>
-        <p>total data {data?.length}</p>
+        
 
 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
   {data?.map((cat, index) => (
@@ -46,9 +48,10 @@ const Categories = () => {
       
         <div className="flex justify-between items-center mt-2">
           <p className="font-bold text-lime-600 text-2xl">${cat.price}</p>
+         <Link to={`/viewDetails/${cat.plantId}`} state={{ plant: cat }}>
           <button className="bg-lime-500 hover:bg-lime-600 text-white p-3 rounded-full transition-all active:scale-90 shadow-md">
             <FiShoppingCart size={20} />
-          </button>
+          </button></Link>
         </div>
       </div>
 
