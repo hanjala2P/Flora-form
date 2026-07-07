@@ -11,6 +11,7 @@ const Categories = () => {
 
 
 
+
   return (
 
     <section className="py-20 bg-lime-50/50">
@@ -23,7 +24,7 @@ const Categories = () => {
         
 
 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-  {data?.map((cat, index) => (
+  {data?.slice(0,4).map((cat, index) => (
     <div 
       key={cat.plantId || index} 
       className="group bg-white p-5 rounded-xl border border-gray-100 shadow-[0_4px_20px_rgba(0,0,0,0.05)] hover:shadow-[0_10px_30px_rgba(163,230,53,0.15)] transition-all duration-500 flex flex-col"
@@ -48,17 +49,18 @@ const Categories = () => {
       
         <div className="flex justify-between items-center mt-2">
           <p className="font-bold text-lime-600 text-2xl">${cat.price}</p>
-         <Link to={`/viewDetails/${cat.plantId}`} state={{ plant: cat }}>
+        
           <button className="bg-lime-500 hover:bg-lime-600 text-white p-3 rounded-full transition-all active:scale-90 shadow-md">
             <FiShoppingCart size={20} />
-          </button></Link>
+          </button>
         </div>
       </div>
 
-     
+      <Link to={`/viewDetails/${cat.plantId}`}>
       <button className="w-full text-black bg-lime-100 hover:bg-lime-400 hover:text-white font-medium py-3 rounded-xl transition-all active:scale-95">
         View Details
       </button>
+      </Link>
     </div>
   ))}
 </div>
