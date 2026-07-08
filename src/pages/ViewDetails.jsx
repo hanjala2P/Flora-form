@@ -26,7 +26,7 @@ const ViewDetails = () => {
         );
     }
 
-    const { category, image, plantName, price, rating, tips, description, scientificName,origin, availableStock, careLevel, providerName } = data;
+    const { category, image, plantName, price, rating, tips, description, scientificName, availableStock, careLevel, providerName } = data;
 
     return (
         <div className="min-h-screen bg-gray-50 py-12 px-4 sm:px-6 lg:px-8 mt-12">

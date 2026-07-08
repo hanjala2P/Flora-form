@@ -4,10 +4,12 @@ import './index.css'
 import { RouterProvider } from 'react-router'
 import router from './Routes/Routes.jsx'
 import { ToastContainer } from 'react-toastify'
+import AuthProvider from './Provider/AuthProvider.jsx'
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
-    <RouterProvider router={router} />
+    <AuthProvider>
+      <RouterProvider router={router} />
     <ToastContainer position="top-center"
   autoClose={2000}
   hideProgressBar={false}
@@ -16,6 +18,7 @@ createRoot(document.getElementById('root')).render(
   pauseOnHover
   draggable
   theme="colored" />
+    </AuthProvider>
   </StrictMode>
   
 )
