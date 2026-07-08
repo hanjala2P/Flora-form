@@ -1,13 +1,14 @@
 
 import { useContext } from 'react';
 import { FcGoogle } from 'react-icons/fc';
-import { Link } from 'react-router'; 
+import { Link, useNavigate } from 'react-router'; 
 import { AuthContext } from '../Provider/AuthProvider';
 import { toast } from 'react-toastify';
 import { useState } from 'react';
 
 
 const Register = () => {
+  const navigate = useNavigate();
   const { GoogleSignIn,emailPasswordSignUp} = useContext(AuthContext);
   const [error, setError] = useState('');
 
@@ -36,7 +37,9 @@ const Register = () => {
         position: "top-center",
         autoClose: 2000,
       });
+       navigate("/");
     })
+    
     .catch((error)=>{
       toast.error(`Error: ${error.message}`, {
         position: "top-center",

@@ -9,6 +9,8 @@ import Tips from "../pages/Tips";
 import ViewDetails from "../pages/ViewDetails";
 import AllPlants from "../pages/AllPlants";
 import WishList from "../pages/WishList";
+import PrivateRoute from "../Provider/PrivetRoute";
+import Profile from "../pages/Profile";
 
 
 const router = createBrowserRouter([
@@ -48,15 +50,32 @@ const router = createBrowserRouter([
             },
             {
                 path:'/allPlants',
-                Component:AllPlants,
+                element:(
+                    <PrivateRoute>
+                        <AllPlants></AllPlants>
+                    </PrivateRoute>
+                ),
                 loader: () => fetch('/data.json')
                 .then(res => res.json())
 
             },
             {
                 path:'/wishlist',
-                Component:WishList
-            }
+                element:(
+                    <PrivateRoute>
+                        <WishList></WishList>
+                    </PrivateRoute>
+                ),
+            },
+            {
+                path:'/profile',
+                element:(
+                    <PrivateRoute>
+                        <Profile></Profile>
+                    </PrivateRoute>
+                ),
+            },
+
         ]
     }
 ]);

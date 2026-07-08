@@ -1,10 +1,22 @@
-import React from "react";
+
+import { useContext } from "react";
 import { BiHeart } from "react-icons/bi";
-import { GiLovers } from "react-icons/gi";
+
 import { PiPlantFill } from "react-icons/pi";
 import { Link, NavLink } from "react-router";
+import { toast } from "react-toastify";
+import { AuthContext } from "../Provider/AuthProvider";
+
 
 const Navbar = () => {
+  const { user, logout } = useContext(AuthContext);
+  const handleLogout=()=>{
+    logout()
+    .then(()=>{
+      toast.success("logout succesfully")
+    })
+    
+  }
   const navItems = (
     <>
       <li>
@@ -62,9 +74,56 @@ const Navbar = () => {
             <BiHeart className="text-2xl text-lime-500" />
             <span className="hidden lg:inline-block">Wishlist</span>
           </Link>
-          <Link to="/login" className="btn bg-lime-500 animate-pulse hover:bg-lime-600 text-white">
+{user ? (
+        <div className="dropdown dropdown-end">
+          {/* Profile Image */}
+          <div tabIndex={0} role="button" className="avatar cursor-pointer">
+            <div className="w-11 rounded-full ring ring-lime-400 ring-offset-2">
+              <img
+                src={
+                  user.photoURL ||
+                  "https://ui-avatars.com/api/?name=User"
+                }
+                alt="Profile"
+              />
+            </div>
+          </div>
+
+          {/* Dropdown */}
+          <ul
+            tabIndex={0}
+            className="dropdown-content menu bg-base-100 rounded-box z-10 w-56 p-2 shadow-lg mt-3"
+          >
+            <li className="pointer-events-none">
+              <span className="font-bold">
+                {user.displayName || "User"}
+              </span>
+            </li>
+
+            <li className="pointer-events-none text-gray-500">
+              <span>{user.email}</span>
+            </li>
+
+            <div className="divider my-1"></div>
+
+            <li>
+              <Link to="/profile">Profile</Link>
+            </li>
+
+            <li>
+              <button onClick={handleLogout}>
+                Logout
+              </button>
+            </li>
+          </ul>
+        </div>
+      ) : (
+        <Link to="/login">
+          <button className="btn bg-lime-500 text-white">
             Login
-          </Link>
+          </button>
+        </Link>
+      )}
         </div>
       </div>
     </div>

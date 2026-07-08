@@ -1,10 +1,12 @@
 import React, { useContext, useState } from 'react';
 import { FcGoogle } from 'react-icons/fc'; 
-import { Link } from 'react-router'; 
+import { Link, useLocation, useNavigate } from 'react-router'; 
 import { AuthContext } from '../Provider/AuthProvider';
 import { toast } from 'react-toastify';
 
 const Login = () => {
+  const navigate = useNavigate();
+const location = useLocation();
   const { GoogleSignIn ,emailPasswordSignIn} = useContext(AuthContext);
   const [error,setError]=useState("")
 
@@ -28,12 +30,14 @@ const Login = () => {
         position: "top-center",
         autoClose: 2000,
       });
+        navigate(location.state || "/");
     })
     .catch((error)=>{
       toast.error(`Error: ${error.message}`, {
         position: "top-center",
         autoClose: 2000,
-      });
+      }
+    );
     })
   }
 
