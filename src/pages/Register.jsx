@@ -1,67 +1,67 @@
-
-import { useContext } from 'react';
-import { FcGoogle } from 'react-icons/fc';
-import { Link, useNavigate } from 'react-router'; 
-import { AuthContext } from '../Provider/AuthProvider';
-import { toast } from 'react-toastify';
-import { useState } from 'react';
-
+import { useContext } from "react";
+import { FcGoogle } from "react-icons/fc";
+import { Link, useNavigate } from "react-router";
+import { AuthContext } from "../Provider/AuthProvider";
+import { toast } from "react-toastify";
+import { useState } from "react";
+import { reload } from "firebase/auth";
+import { auth } from "../Firebase/Firebase.config";
 
 const Register = () => {
   const navigate = useNavigate();
-  const { GoogleSignIn,emailPasswordSignUp} = useContext(AuthContext);
-  const [error, setError] = useState('');
+  const { GoogleSignIn, emailPasswordSignUp, updateUserProfile } = useContext(AuthContext);
+  const [error, setError] = useState("");
 
-  const handleRegister = (e)=>{
+  const handleRegister = (e) => {
     e.preventDefault();
     const form = e.target;
     const name = form.name.value;
     const email = form.email.value;
     const password = form.password.value;
+    const photo = form.photo.value;
 
-   if(name.length <3){
-    setError('Name must be at least 3 characters long');
-    return;
-   }
-   if(password.length <6){
-    setError('Password must be at least 6 characters long');
-    return;
-   }
-   setError('');
+    if (name.length < 3) {
+      setError("Name must be at least 3 characters long");
+      return;
+    }
+    if (password.length < 6) {
+      setError("Password must be at least 6 characters long");
+      return;
+    }
+    setError("");
 
+   emailPasswordSignUp(email, password)
+  .then(async () => {
+    await updateUserProfile(name, photo);
+    await reload(auth.currentUser);
 
+    toast.success("Successfully registered!", {
+      position: "top-center",
+      autoClose: 2000,
+    });
 
-    emailPasswordSignUp(email,password)
-    .then(()=>{
-      toast.success('Successfully registered!', {
-        position: "top-center",
-        autoClose: 2000,
-      });
-       navigate("/");
-    })
+    navigate("/");
+  })
+  .catch((error) => {
+    toast.error(error.message);
+  });
     
-    .catch((error)=>{
-      toast.error(`Error: ${error.message}`, {
-        position: "top-center",
-        autoClose: 2000,
-      });
-    });
-  }
+  };
 
-  const handleGogleSignIn =()=>{
+  const handleGogleSignIn = () => {
     GoogleSignIn()
-    .then(()=>{
-      toast.success('Successfully logged in with Google!', {
-        position: "top-center",
-        autoClose: 2000,
+      .then(() => {
+        toast.success("Successfully logged in with Google!", {
+          position: "top-center",
+          autoClose: 2000,
+        });
+      })
+      .catch((error) => {
+        toast.error(`Error: ${error.message}`, {
+          position: "top-center",
+          autoClose: 2000,
+        });
       });
-    })
-    .catch((error)=>{
-      toast.error(`Error: ${error.message}`, {
-        position: "top-center",
-        autoClose: 2000,
-      });
-    });
   };
 
   return (
@@ -76,23 +76,62 @@ const Register = () => {
           {error && <p className="text-red-500 text-sm">{error}</p>}
           {/* Name Field */}
           <div>
-            <label className="block text-sm font-medium text-gray-700 mb-2">Full Name</label>
-            <input required name='name' type="text" className="w-full px-4 py-3 rounded-xl border border-gray-200 focus:outline-none focus:ring-2 focus:ring-lime-400" placeholder="John Doe" />
+            <label className="block text-sm font-medium text-gray-700 mb-2">
+              Full Name
+            </label>
+            <input
+              required
+              name="name"
+              type="text"
+              className="w-full px-4 py-3 rounded-xl border border-gray-200 focus:outline-none focus:ring-2 focus:ring-lime-400"
+              placeholder="John Doe"
+            />
+          </div>
+          <div>
+            <label className="block text-sm font-medium text-gray-700 mb-2">
+              Photo URL
+            </label>
+
+            <input
+              name="photo"
+              type="text"
+              placeholder="https://example.com/photo.jpg"
+              className="w-full px-4 py-3 rounded-xl border border-gray-200 focus:outline-none focus:ring-2 focus:ring-lime-400"
+            />
           </div>
 
           {/* Email Field */}
           <div>
-            <label className="block text-sm font-medium text-gray-700 mb-2">Email Address</label>
-            <input required name='email' type="email" className="w-full px-4 py-3 rounded-xl border border-gray-200 focus:outline-none focus:ring-2 focus:ring-lime-400" placeholder="you@example.com" />
+            <label className="block text-sm font-medium text-gray-700 mb-2">
+              Email Address
+            </label>
+            <input
+              required
+              name="email"
+              type="email"
+              className="w-full px-4 py-3 rounded-xl border border-gray-200 focus:outline-none focus:ring-2 focus:ring-lime-400"
+              placeholder="you@example.com"
+            />
           </div>
 
           {/* Password Field */}
           <div>
-            <label className="block text-sm font-medium text-gray-700 mb-2">Password</label>
-            <input required name='password' type="password" className="w-full px-4 py-3 rounded-xl border border-gray-200 focus:outline-none focus:ring-2 focus:ring-lime-400" placeholder="••••••••" />
+            <label className="block text-sm font-medium text-gray-700 mb-2">
+              Password
+            </label>
+            <input
+              required
+              name="password"
+              type="password"
+              className="w-full px-4 py-3 rounded-xl border border-gray-200 focus:outline-none focus:ring-2 focus:ring-lime-400"
+              placeholder="••••••••"
+            />
           </div>
 
-          <button type="submit" className="w-full bg-lime-400 hover:bg-lime-500 text-lime-950 font-bold py-3 rounded-xl transition-all shadow-md active:scale-95">
+          <button
+            type="submit"
+            className="w-full bg-lime-400 hover:bg-lime-500 text-lime-950 font-bold py-3 rounded-xl transition-all shadow-md active:scale-95"
+          >
             Create Account
           </button>
         </form>
@@ -105,13 +144,19 @@ const Register = () => {
         </div>
 
         {/* Google Signup */}
-        <button onClick={handleGogleSignIn} className="w-full flex items-center justify-center gap-3 bg-white border border-gray-200 hover:bg-gray-50 text-gray-700 font-semibold py-3 rounded-xl transition-all shadow-sm active:scale-95">
+        <button
+          onClick={handleGogleSignIn}
+          className="w-full flex items-center justify-center gap-3 bg-white border border-gray-200 hover:bg-gray-50 text-gray-700 font-semibold py-3 rounded-xl transition-all shadow-sm active:scale-95"
+        >
           <FcGoogle className="text-xl" />
           Sign up with Google
         </button>
 
         <div className="mt-6 text-center text-sm text-gray-600">
-          Already have an account? <Link to="/login" className="text-lime-600 font-bold hover:underline">Log in</Link>
+          Already have an account?{" "}
+          <Link to="/login" className="text-lime-600 font-bold hover:underline">
+            Log in
+          </Link>
         </div>
       </div>
     </div>
