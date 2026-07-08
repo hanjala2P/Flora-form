@@ -71,12 +71,12 @@ const location = useLocation();
           {/* Email & Password Fields */}
           <div>
             <label className="block text-sm font-medium text-gray-700 mb-2">Email Address</label>
-            <input name='email' type="email" className="w-full px-4 py-3 rounded-xl border border-gray-200 focus:outline-none focus:ring-2 focus:ring-lime-400" placeholder="you@example.com" />
+            <input required name='email' type="email" className="w-full px-4 py-3 rounded-xl border border-gray-200 focus:outline-none focus:ring-2 focus:ring-lime-400" placeholder="you@example.com" />
           </div>
 
           <div>
             <label className="block text-sm font-medium text-gray-700 mb-2">Password</label>
-            <input name='password' type="password" className="w-full px-4 py-3 rounded-xl border border-gray-200 focus:outline-none focus:ring-2 focus:ring-lime-400" placeholder="••••••••" />
+            <input required name='password' type="password" className="w-full px-4 py-3 rounded-xl border border-gray-200 focus:outline-none focus:ring-2 focus:ring-lime-400" placeholder="••••••••" />
           </div>
 
           <button  type="submit" className="w-full bg-lime-400 hover:bg-lime-500 text-lime-950 font-bold py-3 rounded-xl transition-all shadow-md">

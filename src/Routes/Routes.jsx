@@ -11,6 +11,7 @@ import AllPlants from "../pages/AllPlants";
 import WishList from "../pages/WishList";
 import PrivateRoute from "../Provider/PrivetRoute";
 import Profile from "../pages/Profile";
+import AboutUs from "../pages/AboutUs";
 
 
 const router = createBrowserRouter([
@@ -75,6 +76,10 @@ const router = createBrowserRouter([
                     </PrivateRoute>
                 ),
             },
+            {
+                path:'/aboutUs',
+                element:<AboutUs></AboutUs>
+            }
 
         ]
     }

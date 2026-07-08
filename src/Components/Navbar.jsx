@@ -1,7 +1,7 @@
 
 import { useContext } from "react";
 import { BiHeart } from "react-icons/bi";
-
+import '../index.css'
 import { PiPlantFill } from "react-icons/pi";
 import { Link, NavLink } from "react-router";
 import { toast } from "react-toastify";
@@ -26,7 +26,7 @@ const Navbar = () => {
         <NavLink to="/allPlants">Plants</NavLink>
       </li>
       <li>
-        <NavLink to="/my-Profile">My Profile</NavLink>
+        <NavLink to="/aboutUs">AboutUs</NavLink>
       </li>
     </>
   );
