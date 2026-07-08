@@ -143,14 +143,7 @@ const ViewDetails = () => {
   placeholder="Enter your name"
   required
 />
-      {/* auto  */}
-      {/* <input
-        type="text"
-        defaultValue={user?.displayName || ""}
-        required
-        className="w-full border border-gray-300 rounded-xl px-4 py-3 outline-none focus:border-lime-500"
-        placeholder="Enter your name"
-      /> */}
+      
     </div>
 
     <div>
@@ -165,13 +158,7 @@ const ViewDetails = () => {
   required
 />
 
-      {/* <input
-        type="email"
-        defaultValue={user?.email || ""}
-        required
-        className="w-full border border-gray-300 rounded-xl px-4 py-3 outline-none focus:border-lime-500"
-        placeholder="Enter your email"
-      /> */}
+    
     </div>
 
     <button

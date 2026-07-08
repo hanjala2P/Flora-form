@@ -2,9 +2,7 @@ import { createBrowserRouter } from "react-router";
 import Root from "../Layout/Root";
 import Login from "../pages/Login";
 import Register from "../pages/Register";
-import Categories from "../pages/Categories";
 import Home from "../Components/Home";
-import Test from "../pages/Test";
 import Tips from "../pages/Tips";
 import ViewDetails from "../pages/ViewDetails";
 import AllPlants from "../pages/AllPlants";
@@ -12,12 +10,16 @@ import WishList from "../pages/WishList";
 import PrivateRoute from "../Provider/PrivetRoute";
 import Profile from "../pages/Profile";
 import AboutUs from "../pages/AboutUs";
+import HydrateFallback from "../Components/HydrateFallback";
+import ErrorPage from "../pages/ErrorPage";
 
 
 const router = createBrowserRouter([
     {
         path: "/",
         element: <Root />,
+        HydrateFallback:HydrateFallback,
+        errorElement:ErrorPage,
         children: [
             {
                 index: true,

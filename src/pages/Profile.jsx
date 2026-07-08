@@ -1,5 +1,7 @@
 import React, { useContext } from "react";
 import { AuthContext } from "../Provider/AuthProvider";
+import { Link, } from "react-router";
+
 
 const Profile = () => {
   const { user } = useContext(AuthContext);
@@ -67,6 +69,9 @@ const Profile = () => {
             </span>
           </div>
         </div>
+        <Link to='/' className="flex flex-col justify-center ">
+            <button className="btn  mt-6  text-lime-400 hover:bg-lime-500 hover:text-white border-lime-400">back to home</button>
+        </Link>
 
       </div>
     </div>
