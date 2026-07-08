@@ -43,7 +43,9 @@ const router = createBrowserRouter([
             },
             {
                 path:'/viewDetails/:id',
-                Component:ViewDetails,
+                element:(<PrivateRoute>
+                    <ViewDetails></ViewDetails>
+                </PrivateRoute>),
                 loader: () => fetch('/data.json')
                 .then(res => res.json())
                 

@@ -1,10 +1,20 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { useNavigate, useParams } from 'react-router';
 import { useLoaderData } from 'react-router';
 // আইকনগুলো ইমপোর্ট করা
 import { FaArrowLeft, FaStar, FaWater, FaSun, FaLeaf, FaDollarSign, FaInfoCircle, FaRulerCombined, FaGlobeAmericas, FaWarehouse, FaShieldAlt, FaTruck } from 'react-icons/fa';
+import { toast } from 'react-toastify';
+import { AuthContext } from '../Provider/AuthProvider';
 
 const ViewDetails = () => {
+    const { user } = useContext(AuthContext);
+ const handleBookConsultation = (e) => {
+  e.preventDefault();
+
+  toast.success("Consultation booked successfully!");
+
+  e.target.reset();
+};
     const navigate = useNavigate();
     const { id } = useParams();
     const details = useLoaderData();
@@ -111,6 +121,67 @@ const ViewDetails = () => {
                             </div>
                         </div>
                     </div>
+                    {/* Book Consultation */}
+<div className="mt-10 bg-lime-50 border border-lime-200 rounded-2xl p-6">
+  <h2 className="text-2xl font-bold text-center text-lime-700 mb-6">
+    Book Consultation
+  </h2>
+
+  <form
+    onSubmit={handleBookConsultation}
+    className="space-y-5"
+  >
+    <div>
+      <label className="block font-medium mb-2">
+        Name
+      </label>
+
+<input
+ className="w-full border border-gray-300 rounded-xl px-4 py-3 outline-none focus:border-lime-500"
+  name="name"
+  type="text"
+  placeholder="Enter your name"
+  required
+/>
+      {/* auto  */}
+      {/* <input
+        type="text"
+        defaultValue={user?.displayName || ""}
+        required
+        className="w-full border border-gray-300 rounded-xl px-4 py-3 outline-none focus:border-lime-500"
+        placeholder="Enter your name"
+      /> */}
+    </div>
+
+    <div>
+      <label className="block font-medium mb-2">
+        Email
+      </label>
+      
+    <input  className="w-full border border-gray-300 rounded-xl px-4 py-3 outline-none focus:border-lime-500"
+  name="email"
+  type="email"
+  placeholder="Enter your email"
+  required
+/>
+
+      {/* <input
+        type="email"
+        defaultValue={user?.email || ""}
+        required
+        className="w-full border border-gray-300 rounded-xl px-4 py-3 outline-none focus:border-lime-500"
+        placeholder="Enter your email"
+      /> */}
+    </div>
+
+    <button
+      type="submit"
+      className="w-full bg-lime-500 hover:bg-lime-600 text-white font-semibold py-3 rounded-xl transition"
+    >
+      Book Now
+    </button>
+  </form>
+</div>
 
                     <button 
                         className="mt-10 w-full bg-gray-900 hover:bg-gray-800 text-white py-4 rounded-xl font-bold transition-transform hover:scale-[1.01] flex items-center justify-center gap-2" 
