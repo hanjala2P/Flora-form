@@ -7,6 +7,7 @@ import Home from "../Components/Home";
 import Test from "../pages/Test";
 import Tips from "../pages/Tips";
 import ViewDetails from "../pages/ViewDetails";
+import AllPlants from "../pages/AllPlants";
 
 
 const router = createBrowserRouter([
@@ -40,6 +41,16 @@ const router = createBrowserRouter([
                 path:'/viewDetails/:id',
                 Component:ViewDetails,
                 loader: () => fetch('/data.json')
+                .then(res => res.json())
+                
+                
+            },
+            {
+                path:'/allPlants',
+                Component:AllPlants,
+                loader: () => fetch('/data.json')
+                .then(res => res.json())
+
             }
         ]
     }

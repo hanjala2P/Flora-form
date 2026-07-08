@@ -2,8 +2,8 @@ import React from 'react';
 import { useLoaderData } from 'react-router';
 
 const Test = () => {
-    const data = useLoaderData();
-    console.log("test", data); // Log the fetched data to the console
+    // const data = useLoaderData();
+    // console.log("test", data); // Log the fetched data to the console
     return (
         <div>
             <h1>Test Page</h1>

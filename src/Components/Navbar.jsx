@@ -9,7 +9,7 @@ const Navbar = () => {
         <NavLink to="/">Home</NavLink>
       </li>
       <li>
-        <NavLink to="/plants">Plants</NavLink>
+        <NavLink to="/allPlants">Plants</NavLink>
       </li>
       <li>
         <NavLink to="/my-Profile">My Profile</NavLink>
@@ -17,9 +17,9 @@ const Navbar = () => {
     </>
   );
   return (
-    <div>
-      <div className="navbar bg-white/30 backdrop-blur-xl border border-white/10 shadow-sm">
-        <div className="navbar-start">
+    <div className="fixed top-0 left-0 right-0 z-50">
+      <div className="navbar bg-white/40 backdrop-blur-xl border border-white/10 shadow-sm ">
+        <div className="navbar-start ">
           <div className="dropdown">
             <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
               <svg
@@ -40,7 +40,7 @@ const Navbar = () => {
             </div>
             <ul
               tabIndex="-1"
-              className="menu menu-sm dropdown-content  bg-white/20 backdrop-blur-xl border border-white/10 rounded-box z-1 mt-3 w-52 p-2 shadow"
+              className="menu menu-sm dropdown-content  bg-white/60 backdrop-blur-xl border border-white/10 rounded-box z-1 mt-3 w-52 p-2 shadow"
             >
               {navItems}
             </ul>
