@@ -4,11 +4,47 @@ import { FcGoogle } from 'react-icons/fc';
 import { Link } from 'react-router'; 
 import { AuthContext } from '../Provider/AuthProvider';
 import { toast } from 'react-toastify';
+import { useState } from 'react';
 
 
 const Register = () => {
-  const { GoogleSignIn,user,loading} = useContext(AuthContext);
-  
+  const { GoogleSignIn,emailPasswordSignUp} = useContext(AuthContext);
+  const [error, setError] = useState('');
+
+  const handleRegister = (e)=>{
+    e.preventDefault();
+    const form = e.target;
+    const name = form.name.value;
+    const email = form.email.value;
+    const password = form.password.value;
+
+   if(name.length <3){
+    setError('Name must be at least 3 characters long');
+    return;
+   }
+   if(password.length <6){
+    setError('Password must be at least 6 characters long');
+    return;
+   }
+   setError('');
+
+
+
+    emailPasswordSignUp(email,password)
+    .then(()=>{
+      toast.success('Successfully registered!', {
+        position: "top-center",
+        autoClose: 2000,
+      });
+    })
+    .catch((error)=>{
+      toast.error(`Error: ${error.message}`, {
+        position: "top-center",
+        autoClose: 2000,
+      });
+    });
+  }
+
   const handleGogleSignIn =()=>{
     GoogleSignIn()
     .then(()=>{
@@ -33,7 +69,8 @@ const Register = () => {
           <p className="text-gray-500 mt-2">Join our plant loving community</p>
         </div>
 
-        <form className="space-y-5">
+        <form className="space-y-5" onSubmit={handleRegister}>
+          {error && <p className="text-red-500 text-sm">{error}</p>}
           {/* Name Field */}
           <div>
             <label className="block text-sm font-medium text-gray-700 mb-2">Full Name</label>
