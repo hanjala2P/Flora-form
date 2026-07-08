@@ -1,9 +1,30 @@
 
+import { useContext } from 'react';
 import { FcGoogle } from 'react-icons/fc';
 import { Link } from 'react-router'; 
+import { AuthContext } from '../Provider/AuthProvider';
+import { toast } from 'react-toastify';
+
 
 const Register = () => {
-    
+  const { GoogleSignIn,user,loading} = useContext(AuthContext);
+  
+  const handleGogleSignIn =()=>{
+    GoogleSignIn()
+    .then(()=>{
+      toast.success('Successfully logged in with Google!', {
+        position: "top-center",
+        autoClose: 2000,
+      });
+    })
+    .catch((error)=>{
+      toast.error(`Error: ${error.message}`, {
+        position: "top-center",
+        autoClose: 2000,
+      });
+    });
+  };
+
   return (
     <div className="min-h-screen flex items-center justify-center bg-lime-50 px-4 py-10">
       <div className="bg-white p-8 md:p-12 rounded-3xl shadow-xl w-full max-w-md border border-lime-100">
@@ -16,19 +37,19 @@ const Register = () => {
           {/* Name Field */}
           <div>
             <label className="block text-sm font-medium text-gray-700 mb-2">Full Name</label>
-            <input type="text" className="w-full px-4 py-3 rounded-xl border border-gray-200 focus:outline-none focus:ring-2 focus:ring-lime-400" placeholder="John Doe" />
+            <input name='name' type="text" className="w-full px-4 py-3 rounded-xl border border-gray-200 focus:outline-none focus:ring-2 focus:ring-lime-400" placeholder="John Doe" />
           </div>
 
           {/* Email Field */}
           <div>
             <label className="block text-sm font-medium text-gray-700 mb-2">Email Address</label>
-            <input type="email" className="w-full px-4 py-3 rounded-xl border border-gray-200 focus:outline-none focus:ring-2 focus:ring-lime-400" placeholder="you@example.com" />
+            <input name='email' type="email" className="w-full px-4 py-3 rounded-xl border border-gray-200 focus:outline-none focus:ring-2 focus:ring-lime-400" placeholder="you@example.com" />
           </div>
 
           {/* Password Field */}
           <div>
             <label className="block text-sm font-medium text-gray-700 mb-2">Password</label>
-            <input type="password" className="w-full px-4 py-3 rounded-xl border border-gray-200 focus:outline-none focus:ring-2 focus:ring-lime-400" placeholder="••••••••" />
+            <input name='password' type="password" className="w-full px-4 py-3 rounded-xl border border-gray-200 focus:outline-none focus:ring-2 focus:ring-lime-400" placeholder="••••••••" />
           </div>
 
           <button type="submit" className="w-full bg-lime-400 hover:bg-lime-500 text-lime-950 font-bold py-3 rounded-xl transition-all shadow-md active:scale-95">
@@ -44,7 +65,7 @@ const Register = () => {
         </div>
 
         {/* Google Signup */}
-        <button className="w-full flex items-center justify-center gap-3 bg-white border border-gray-200 hover:bg-gray-50 text-gray-700 font-semibold py-3 rounded-xl transition-all shadow-sm active:scale-95">
+        <button onClick={handleGogleSignIn} className="w-full flex items-center justify-center gap-3 bg-white border border-gray-200 hover:bg-gray-50 text-gray-700 font-semibold py-3 rounded-xl transition-all shadow-sm active:scale-95">
           <FcGoogle className="text-xl" />
           Sign up with Google
         </button>
