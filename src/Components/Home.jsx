@@ -8,7 +8,7 @@ import Ideas from '../pages/Ideas';
 
 const Home = () => {
     return (
-        <div>
+        <div className='mt-12'>
             <Hero></Hero>
             <Categories></Categories>
             <Tips></Tips>

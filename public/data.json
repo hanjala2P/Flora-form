@@ -1,4 +1,3 @@
-
 [
   {
     "plantId": 1,
@@ -6,7 +5,12 @@
     "category": "Air Purifier",
     "price": 18,
     "rating": 4.8,
-     "image": "https://images.pexels.com/photos/29218657/pexels-photo-29218657.jpeg",
+    "description": "A hardy indoor plant that naturally purifies the air and requires very little maintenance.",
+    "image": "https://images.pexels.com/photos/29218657/pexels-photo-29218657.jpeg",
+    "availableStock": 25,
+    "careLevel": "Easy",
+    "providerName": "Green Leaf Nursery",
+    "origin": "Tropical Africa",
     "tips": {
       "watering": "Water once a week. It is best to water when the top 2 inches of soil feel dry.",
       "sunlight": "Thrives in bright, indirect light. Direct sunlight can scorch the leaves.",
@@ -19,7 +23,11 @@
     "category": "Foliage",
     "price": 35,
     "rating": 4.9,
-        "image": "https://images.pexels.com/photos/7318283/pexels-photo-7318283.jpeg",
+    "description": "A tropical foliage plant known for its large split leaves and elegant appearance.",
+    "image": "https://images.pexels.com/photos/7318283/pexels-photo-7318283.jpeg",
+    "availableStock": 18,
+    "careLevel": "Medium",
+    "providerName": "Urban Jungle Garden",
     "tips": {
       "watering": "Keep the topsoil lightly moist. Avoid letting water sit at the bottom of the pot.",
       "sunlight": "Prefers bright to medium indirect light.",
@@ -32,7 +40,11 @@
     "category": "Low Light",
     "price": 22,
     "rating": 4.7,
-       "image": "https://images.pexels.com/photos/8298251/pexels-photo-8298251.jpeg",
+    "description": "A resilient indoor plant that grows well in low-light environments with minimal care.",
+    "image": "https://images.pexels.com/photos/8298251/pexels-photo-8298251.jpeg",
+    "availableStock": 30,
+    "careLevel": "Easy",
+    "providerName": "Nature's Corner",
     "tips": {
       "watering": "Needs very little water. Water only when the soil has dried out completely.",
       "sunlight": "Can survive in low light, but thrives in bright, indirect light.",
@@ -45,7 +57,11 @@
     "category": "Flowering",
     "price": 25,
     "rating": 4.6,
+    "description": "A beautiful flowering indoor plant that also helps improve indoor air quality.",
     "image": "https://images.pexels.com/photos/32425124/pexels-photo-32425124.jpeg",
+    "availableStock": 20,
+    "careLevel": "Medium",
+    "providerName": "Bloom Garden Center",
     "tips": {
       "watering": "Keep the soil consistently moist. If leaves start drooping, it needs water.",
       "sunlight": "Needs bright, indirect light.",
@@ -58,7 +74,11 @@
     "category": "Foliage",
     "price": 45,
     "rating": 4.4,
-   "image": "https://images.unsplash.com/photo-1545241047-6083a3684587?auto=format&fit=crop&q=80&w=500",
+    "description": "A stylish statement plant that adds elegance to modern homes and offices.",
+    "image": "https://images.unsplash.com/photo-1545241047-6083a3684587?auto=format&fit=crop&q=80&w=500",
+    "availableStock": 12,
+    "careLevel": "Hard",
+    "providerName": "Premium Plant House",
     "tips": {
       "watering": "Allow the top inch of soil to dry out between waterings.",
       "sunlight": "Bright, indirect light is best.",
@@ -71,7 +91,11 @@
     "category": "Succulent",
     "price": 14,
     "rating": 4.8,
-       "image": "https://images.pexels.com/photos/17543272/pexels-photo-17543272.jpeg",
+    "description": "A medicinal succulent that is easy to grow and well known for its healing properties.",
+    "image": "https://images.pexels.com/photos/17543272/pexels-photo-17543272.jpeg",
+    "availableStock": 40,
+    "careLevel": "Easy",
+    "providerName": "Eco Plant Nursery",
     "tips": {
       "watering": "Water deeply only when the soil is completely dry.",
       "sunlight": "Requires at least 6 hours of bright sunlight daily.",

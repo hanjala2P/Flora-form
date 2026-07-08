@@ -8,6 +8,7 @@ import Test from "../pages/Test";
 import Tips from "../pages/Tips";
 import ViewDetails from "../pages/ViewDetails";
 import AllPlants from "../pages/AllPlants";
+import WishList from "../pages/WishList";
 
 
 const router = createBrowserRouter([
@@ -51,6 +52,10 @@ const router = createBrowserRouter([
                 loader: () => fetch('/data.json')
                 .then(res => res.json())
 
+            },
+            {
+                path:'/wishlist',
+                Component:WishList
             }
         ]
     }

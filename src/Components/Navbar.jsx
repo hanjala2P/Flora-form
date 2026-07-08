@@ -1,4 +1,6 @@
 import React from "react";
+import { BiHeart } from "react-icons/bi";
+import { GiLovers } from "react-icons/gi";
 import { PiPlantFill } from "react-icons/pi";
 import { Link, NavLink } from "react-router";
 
@@ -56,6 +58,10 @@ const Navbar = () => {
           <ul className="menu menu-horizontal px-1">{navItems}</ul>
         </div>
         <div className="navbar-end">
+          <Link to="/wishlist" className="btn btn-ghost gap-1">
+            <BiHeart className="text-2xl text-lime-500" />
+            <span className="hidden lg:inline-block">Wishlist</span>
+          </Link>
           <Link to="/login" className="btn bg-lime-500 animate-pulse hover:bg-lime-600 text-white">
             Login
           </Link>
