@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import { loadWishListData, removeFromWishList } from "../Utils/LocalStorage";
 import { AiOutlineDelete } from "react-icons/ai";
 import { FaStar } from "react-icons/fa";
-
+import { Link } from "react-router";
 const WishList = () => {
   const [wishList, setWishList] = useState([]);
   const [openCard, setOpenCard] = useState(null);
@@ -103,7 +103,11 @@ const WishList = () => {
           ))}
         </div>
       )}
+      <Link to='/' className="flex flex-col justify-center mt-12 py-10">
+        <button className="btn border-none bg-lime-400  text-white hover:bg-lime-500">Back to Home</button>
+      </Link>
     </div>
+    
   );
 };
 
