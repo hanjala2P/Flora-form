@@ -1,16 +1,60 @@
-# React + Vite
+# 🌿 Flora Form
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Flora Form is a modern indoor plant management web application built with React. Users can explore plants, view detailed information, create an account, manage their wishlist, and book plant consultations through a clean and responsive interface.
 
-Currently, two official plugins are available:
+## 🚀 Live Website
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+🔗 https://cheery-baklava-a2dfeb.netlify.app
 
-## React Compiler
+## ✨ Features
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+- User Authentication (Email/Password & Google Login)
+- Protected Routes
+- View Plant Details
+- Add & Remove Wishlist (Local Storage)
+- Book Plant Consultation
+- Update User Profile
+- Forgot Password
+- Responsive Design
+- Loading & Error Handling
+- Toast Notifications
 
-## Expanding the ESLint configuration
+## 🛠️ Technologies Used
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+- React
+- React Router
+- Firebase Authentication
+- Tailwind CSS
+- DaisyUI
+- React Icons
+- React Toastify
+- Local Storage
+
+## 📂 Installation
+
+```bash
+git clone <repository-url>
+
+cd flora-form
+
+npm install
+
+npm run dev
+```
+
+## 🌐 Environment Variables
+
+Create a `.env` file and add your Firebase configuration.
+
+```env
+VITE_API_KEY=your_api_key
+VITE_AUTH_DOMAIN=your_auth_domain
+VITE_PROJECT_ID=your_project_id
+VITE_STORAGE_BUCKET=your_storage_bucket
+VITE_MESSAGING_SENDER_ID=your_sender_id
+VITE_APP_ID=your_app_id
+```
+
+## 👨‍💻 Author
+
+Developed by Hanjala
